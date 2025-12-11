@@ -561,7 +561,7 @@ def intensity(coarse,vertices,loc):
       Longitudinal and Transverse intensities, respectively 
     """
     coarse = coarse.reshape(11,1)
-    I_ = np.sum((np.absolute(coarse)**2 * vertices)/energy(coarse,loc),axis=0)#velocity vector for each vertex
+    I_ = np.sum((np.absolute(coarse)**2 * vertices)/energy(coarse),axis=0)#velocity vector for each vertex
     Il = np.sum(I_ * loc)
     It = np.linalg.norm(np.cross(I_,loc))
     return Il,It
